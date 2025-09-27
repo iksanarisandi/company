@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { testimonials } from '@/data/testimonials';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Star } from 'lucide-react';
 
@@ -26,19 +25,6 @@ const itemVariants = {
   },
 };
 
-const marqueeVariants = {
-  animate: {
-    x: [0, -100],
-    transition: {
-      x: {
-        repeat: Infinity,
-        repeatDelay: 0,
-        duration: 30,
-        ease: "linear",
-      },
-    },
-  },
-};
 
 const clientLogos = [
   { name: "Nusa Mart", logo: "https://via.placeholder.com/120x40/FF6B6B/FFFFFF?text=Nusa+Mart", industry: "Ritel" },
@@ -114,15 +100,21 @@ export function ClientsPage() {
               Mitra Terpercaya
             </motion.h2>
             <motion.div
-              variants={marqueeVariants}
-              animate="animate"
+              animate={{ x: [0, -100] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  duration: 30,
+                  ease: "linear"
+                }
+              }}
               className="overflow-hidden"
             >
               <div className="flex space-x-12">
                 {clientLogos.map((client, index) => (
                   <motion.div
                     key={index}
-                    className="flex-shrink-0 w-32 h-16 bg-white dark:bg-card rounded-lg shadow-md flex items-center justify-center border border-border"
+                    className="flex-shrink-0 w-32 h-16 bg-background dark:bg-card rounded-lg shadow-md flex items-center justify-center border border-border"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >

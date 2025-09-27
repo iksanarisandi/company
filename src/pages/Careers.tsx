@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
-import { Users, Heart, Award, Clock, MapPin, Laptop, Zap, GraduationCap, Coffee, Wifi } from 'lucide-react';
+import { Heart, Award, Clock, MapPin, GraduationCap, Coffee, Wifi } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -241,7 +239,7 @@ export function CareersPage() {
             <p className="text-primary-foreground/90 max-w-2xl mx-auto">
               Jika Anda passionate tentang menciptakan dampak dan siap bergabung dengan tim inovatif, kami menunggu Anda.
             </p>
-            <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+            <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-muted">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 Hubungi Tim Rekrutmen
               </a>

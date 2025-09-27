@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/data/projects';
-import { cn } from '@/lib/utils';
-import { ArrowLeft, ArrowRight, Eye, TrendingUp } from 'lucide-react';
+import { ArrowLeft, ArrowRight, TrendingUp } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },

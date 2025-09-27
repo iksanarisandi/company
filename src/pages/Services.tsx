@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { services } from '@/data/services';
-import { cn } from '@/lib/utils';
 import { BarChart3, Zap, Code, Palette, TrendingUp, GraduationCap } from 'lucide-react';
 
 const iconMap = {

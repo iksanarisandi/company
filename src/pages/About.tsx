@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Users2, BarChart3, Zap, Code, Palette, TrendingUp, GraduationCap, Calendar, Award, Lightbulb, Users as UsersIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Users, Users2, BarChart3, Zap, Code, TrendingUp, Calendar, Award, Lightbulb, Users as UsersIcon } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -107,7 +106,7 @@ export function AboutPage() {
               variants={containerVariants}
               className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
             >
-              {coreValues.map((value, index) => (
+              {coreValues.map((value) => (
                 <motion.div
                   key={value.title}
                   variants={itemVariants}
@@ -135,7 +134,7 @@ export function AboutPage() {
             viewport={{ once: true, margin: "-100px" }}
             className="grid md:grid-cols-4 gap-8 text-center"
           >
-            {values.map((value, index) => (
+            {values.map((value) => (
               <motion.div
                 key={value.label}
                 variants={itemVariants}
@@ -210,7 +209,7 @@ export function AboutPage() {
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <div className="flex space-x-6 min-w-max">
-                {timeline.map((item, index) => (
+                {timeline.map((item) => (
                   <motion.div
                     key={item.year}
                     variants={itemVariants}

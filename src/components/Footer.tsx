@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { LinkedinIcon, InstagramIcon, Mail, MapPin, Phone } from 'lucide-react';
 
 const navigation = [
   { title: 'Tentang', href: '/tentang' },
@@ -16,8 +16,8 @@ const legal = [
 ];
 
 const social = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/pt-mencari-cinta-sejati', icon: Linkedin },
-  { name: 'Instagram', href: 'https://instagram.com/ptmencaricintasejati', icon: Instagram },
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/pt-mencari-cinta-sejati', icon: LinkedinIcon },
+  { name: 'Instagram', href: 'https://instagram.com/ptmencaricintasejati', icon: InstagramIcon },
 ];
 
 export function Footer() {

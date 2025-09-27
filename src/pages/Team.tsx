@@ -3,8 +3,7 @@ import { team } from '@/data/team';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { Linkedin, Mail, Phone } from 'lucide-react';
+import { LinkedinIcon, Mail, Phone } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,10 +26,6 @@ const cardVariants = {
   },
 };
 
-const hoverVariants = {
-  hover: { scale: 1.02, y: -5 },
-  tap: { scale: 0.98 },
-};
 
 export function TeamPage() {
   const whatsappUrl = `https://wa.me/6282347303153?text=Halo,%20saya%20tertarik%20bergabung%20dengan%20tim%20PT%20Mencari%20Cinta%20Sejati.`;
@@ -84,7 +79,7 @@ export function TeamPage() {
                       <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="flex space-x-2">
                           <Button variant="ghost" size="icon" className="h-8 w-8">
-                            <Linkedin className="h-4 w-4" />
+                            <LinkedinIcon className="h-4 w-4" />
                           </Button>
                           <Button variant="ghost" size="icon" className="h-8 w-8">
                             <Mail className="h-4 w-4" />

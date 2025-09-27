@@ -2,7 +2,6 @@ import { motion, type RepeatType, easeInOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
 
 const heroVariants = {
   hidden: { opacity: 0, y: 30 },

@@ -1,5 +1,6 @@
-import { motion, useMotionValue, useVelocity, useSpring } from 'framer-motion';
-import { ReactNode } from 'react';
+import { motion, useInView, animate } from 'framer-motion';
+import type { ReactNode } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface StatProps {
@@ -9,7 +10,7 @@ interface StatProps {
   label: string;
   icon?: ReactNode;
   className?: string;
-  animate?: boolean;
+  animated?: boolean;
 }
 
 export function Stat({
@@ -19,13 +20,22 @@ export function Stat({
   label,
   icon,
   className,
-  animate = true,
+  animated = true,
 }: StatProps) {
-  const ref = useMotionValue(0);
-  const velocity = useVelocity(ref);
-  const x = useSpring(ref, { stiffness: 100, damping: 30 });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [displayValue, setDisplayValue] = useState(animated ? 0 : value);
 
-  const displayValue = animate ? Math.floor(x.get()) : value;
+  useEffect(() => {
+    if (isInView && animated) {
+      animate(0, value, {
+        duration: 2,
+        onUpdate: (latest: number) => {
+          setDisplayValue(Math.floor(latest));
+        },
+      });
+    }
+  }, [isInView, value, animated]);
 
   return (
     <motion.div
@@ -34,15 +44,10 @@ export function Stat({
         "text-center space-y-2",
         className
       )}
-      initial={animate ? { opacity: 0, y: 20 } : undefined}
-      whileInView={animate ? { opacity: 1, y: 0 } : undefined}
+      initial={animated ? { opacity: 0, y: 20 } : undefined}
+      whileInView={animated ? { opacity: 1, y: 0 } : undefined}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      onUpdate={() => {
-        if (velocity.get() === 0) {
-          ref.set(value);
-        }
-      }}
     >
       {icon && (
         <div className="h-12 w-12 mx-auto mb-2">

@@ -1,9 +1,8 @@
 import { motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/data/projects';
-import { cn } from '@/lib/utils';
 import { ArrowRight, Eye } from 'lucide-react';
 
 const containerVariants = {
