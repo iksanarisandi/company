@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mencaricintasejati.co.id/sitemap.xml
